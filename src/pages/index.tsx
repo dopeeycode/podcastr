@@ -1,6 +1,5 @@
-import { Header } from '@/components/Header'
 import React from 'react'
 
 export default function index() {
-  return <Header />
+  return <h1>Index</h1>
 }
