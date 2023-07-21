@@ -3,16 +3,4 @@
 	height: calc(100vh - 6.5rem);
   overflow-y: scroll;
 
-  
-	h2 {
-		margin-top: 3rem;
-		margin-bottom: 1.5rem;
-	}
-
-	ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(125px, 1fr));
-    gap: 1.5rem;
-	}
 }

@@ -1,6 +1,5 @@
-.latestEpisodes {
   
-  li {
+  .container {
     background: var(--white);
     border: 1px solid var(--gray-100);
 
@@ -45,10 +44,7 @@
         }
       }
 
-      a.light {
-        color: var(--gray-50);
-      }
-
+      
       p {
         font-size: 0.875rem;
         margin-top: 0.5rem;
@@ -108,9 +104,5 @@
       }
     }
 
-    .btnGreen {
-      background: var(--green-500);
-      border: none;
-    }
   }
-}
+  

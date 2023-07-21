@@ -1,0 +1,40 @@
+.lastestEpisodes {
+  padding-bottom: 2rem;
+
+  h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.all_episodes {
+  padding-bottom: 2rem;
+
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+ 
+  table {
+    width: 100%;
+    display: flex;
+
+    th, td {
+      padding: .75rem 1rem;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    th {
+      color: var(--gray-200);
+      text-transform: uppercase;
+      font: 500 .75rem Lexend, sans-serif;
+      text-align: left;
+    }
+  }
+}

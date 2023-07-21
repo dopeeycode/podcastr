@@ -7,7 +7,9 @@ import { convertDurationToTimeString } from '@/utils/convertDurationToTimeString
 import { GetStaticProps } from 'next'
 
 import styles from './styles.module.scss'
-import LatestEpisodes from '@/components/LatestEpisodes'
+import LatestEpisodes from '@/components/Episodes/components/LatestEpisodes'
+import AllEpisodes from '@/components/Episodes/components/AllEpisodes'
+import Episodes from '@/components/Episodes'
 
 export interface EspisodeProps {
   id: string
@@ -23,7 +25,7 @@ export interface EspisodeProps {
   }
 }
 
-interface HomeProps {
+export interface HomeProps {
   allEpisodes: EspisodeProps[]
   latestEpisodes: EspisodeProps[]
 }
@@ -31,17 +33,7 @@ interface HomeProps {
 export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   return (
     <div className={styles.homePage}>
-      <section className={styles.latestEpisodes}>
-        <h2>Últimos lançamentos</h2>
-
-        <ul>
-          {latestEpisodes.map((episode) => {
-            return <LatestEpisodes key={episode.id} episode={episode} />
-          })}
-        </ul>
-      </section>
-
-      <section className={styles.allEpisodes}></section>
+      <Episodes allEpisodes={allEpisodes} latestEpisodes={latestEpisodes} />
     </div>
   )
 }
@@ -61,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episode.title,
       thumbnail: episode.thumbnail,
       members: episode.members,
-      published_at: format(parseISO(episode.published_at), 'EEEEEE, d MMMM', {
+      published_at: format(parseISO(episode.published_at), 'd MMM y', {
         locale: ptBR,
       }),
       duration: Number(episode.file.duration),
